@@ -1,0 +1,21 @@
+<div class="animate__animated animate__fadeIn">
+  <h2>
+    Buscar por región <small>{{ regionActiva | titlecase }}</small>
+  </h2>
+  <hr />
+  <h5>Seleccione la región</h5>
+
+  <div class="row">
+    <div class="col">
+      <button
+        [class]="getClaseCSS(region)"
+        *ngFor="let region of regiones"
+        (click)="activarRegion(region)"
+      >
+        {{ region | titlecase }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-pais-tabla *ngIf="paises.length > 0" [paises]="paises"></app-pais-tabla>
